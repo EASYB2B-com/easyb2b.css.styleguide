@@ -1,0 +1,315 @@
+/* NAV TABS */
+
+.nav-tabs-custom {
+  margin-bottom: 20px;
+  border-radius: @border-radius-base;
+  background: #3A506B;
+  > .nav-tabs {
+    margin: 0;
+    border-bottom-color: #f4f4f4;
+    border-top-radius: @border-radius-base;
+    > li {
+      border-top: 3px solid transparent;
+      margin-bottom: -2px;
+      > a {
+        color: #fff;
+        border-radius: 0;
+        &.text-muted {
+          color: #999;
+        }
+        &,
+        &:hover {
+          background: transparent;
+          margin: 0;
+        }
+        &:hover {
+          color: #999;
+        }
+      }
+      &:not(.active) {
+        > a:hover,
+        > a:focus,
+        > a:active {
+          border-color: transparent;
+        }
+      }
+      &:first-child {
+        margin-left: 15px;
+      }
+      margin-right: 5px;
+    }
+    > li.active {
+      .box-shadow(inset 0px -4px 0px 0px rgba(3, 111, 194, 1));
+      & > a,
+      &:hover > a {
+        background-color: #fff;
+        color: #444;
+      }
+      > a {
+        border-top-color: transparent;
+        border-left-color: #f4f4f4;
+        border-right-color: #f4f4f4;
+      }
+    }
+    /*> li:first-of-type {
+        margin-left: 5;
+        &.active {
+        > a {
+        border-left-color: transparent;
+    }
+    }
+    }*/
+    //Pulled to the right
+    &.pull-right {
+      float: none !important;
+      > li {
+        float: right;
+      }
+      > li:first-of-type {
+        margin-right: 0;
+        > a {
+          border-left-width: 1px;
+        }
+        &.active {
+          > a {
+            border-left-color: #f4f4f4;
+            border-right-color: transparent;
+          }
+        }
+      }
+    }
+    > li.header {
+      line-height: 35px;
+      padding: 0 10px;
+      font-size: 20px;
+      color: #444;
+      > .fa,
+      > .glyphicon,
+      > .ion {
+        margin-right: 5px;
+      }
+    }
+  }
+  > .tab-content {
+    background: #fff;
+    padding: 10px;
+    .border-bottom-radius(@border-radius-base);
+  }
+  .dropdown.open > a {
+    &:active,
+    &:focus {
+      background: transparent;
+      color: #999;
+    }
+  }
+  &.tab-default {
+    > .nav-tabs {
+      > li.active {
+        border-top-color: @gray;
+      }
+    }
+  }
+}
+
+@content-tabs-color-bg: @color-grey-light;
+.content-tabs {
+  > .nav-tabs {
+    margin: 0;
+    background-color: @content-tabs-color-bg;
+    border-bottom-color: #ddd;
+    border-radius: 5px 5px 0 0;
+    > li {
+      margin-bottom: -2px;
+      > a {
+        border-radius: 0;
+        letter-spacing: 1.1px;
+        font-weight: bold;
+        font-size: 85%;
+        .text-muted();
+        &,
+        &:hover {
+          background: transparent;
+          margin: 0;
+        }
+        &:hover {
+          color: @color-aqua-blue;
+        }
+      }
+      &:not(.active) {
+        > a:hover,
+        > a:focus,
+        > a:active {
+          border-color: transparent;
+        }
+      }
+      margin-right: 5px;
+    }
+    > li.active {
+      .box-shadow(inset 0px -4px 0px 0px rgba(3, 111, 194, 1));
+      & > a,
+      &:hover > a {
+        background-color: #fff;
+        color: @color-aqua-blue;
+      }
+      > a {
+        color: @color-aqua-blue;
+        border-top-color: transparent;
+        border-left-color: #f4f4f4;
+        border-right-color: #f4f4f4;
+      }
+    }
+    > li:first-of-type {
+      margin-left: 5;
+      &.active {
+        > a {
+          border-left-color: transparent;
+        }
+      }
+    }
+    //Pulled to the right
+    &.pull-right {
+      float: none !important;
+      > li {
+        float: right;
+      }
+      > li:first-of-type {
+        margin-right: 0;
+        > a {
+          border-left-width: 1px;
+        }
+        &.active {
+          > a {
+            border-left-color: #f4f4f4;
+            border-right-color: transparent;
+          }
+        }
+      }
+    }
+    > li.header {
+      line-height: 35px;
+      padding: 0 10px;
+      font-size: 20px;
+      color: #444;
+      > .fa,
+      > .glyphicon,
+      > .ion {
+        margin-right: 5px;
+      }
+    }
+  }
+  > .tab-content {
+    background: #fff;
+    padding: @grid-gutter-width (@grid-gutter-width / 2);
+    .border-bottom-radius(@border-radius-base);
+  }
+  .dropdown.open > a {
+    &:active,
+    &:focus {
+      background: transparent;
+      color: #999;
+    }
+  }
+  &.tab-default {
+    > .nav-tabs {
+      > li.active {
+        border-top-color: @gray;
+      }
+    }
+  }
+}
+
+.nav-tabs-line {
+  &.has-border {
+    border: 1px solid @nav-tabs-border-color;
+    border-radius: 3px;
+  }
+  .nav-tabs {
+    border-bottom: 1px solid @nav-tabs-border-color;
+    // Give the tabs something to sit on
+    > li {
+      float: left;
+      // Make the list-items overlay the bottom border
+      margin-bottom: -1px;
+      // Actual tabs (as links)
+      > a {
+        border: 0;
+        padding: 10px 20px;
+        color: #76838f;
+        -webkit-transition: .25s;
+        -o-transition: .25s;
+        transition: .25s;
+        border-bottom: 2px solid transparent;
+        &:hover {
+          background: transparent;
+          border-color: transparent transparent #ccd5db;
+        }
+      }
+      // Active state, and its :hover to override normal :hover
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          outline: 0;
+          border: 0;
+          color: #2196F3;
+          background-color: transparent;
+          border-bottom: 2px solid #2196F3;
+        }
+      }
+    }
+    > li.tab-action {
+      a:hover {
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.nav-pills-line {
+    .nav-pills {
+        padding: 12px 15px;
+        > li {
+            min-width: 100px;
+            text-align: center;
+            margin-right: 15px;
+            
+            > a {
+                color: #999;
+            }
+        }
+        > li.active {
+            > a,
+            > a:focus,
+            > a:hover {
+                color: #2196F3;
+                background: #eee;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.nav-pills-sm {
+    .nav-pills > li > a {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+.modal-body > .nav-tabs-line {
+  button.close {
+    top: auto !important;
+  }
+  button.close~a {
+    color: red;
+  }
+  > .nav-tabs {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    & > li > a {
+      padding: 20px;
+    }
+  }
+  > .tab-content {
+    padding: 20px;
+  }
+}

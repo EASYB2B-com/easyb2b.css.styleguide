@@ -1,0 +1,51 @@
+//
+// Forms
+// ------------------------
+// Customize
+// -------------------------
+.form-control {
+  .box-shadow(none);
+  border-color: #ddd;
+  
+  &:focus {
+    .box-shadow(none);
+    border-color: @color-sky-blue;
+  }
+}
+
+.has-feedback-left {
+  // Enable absolute positioning
+  position: relative;
+  // Ensure icons don't overlap text
+  .form-control {
+    padding-left: (@input-height-base * 1.25);
+    padding-right: 16px;
+  }
+  .form-control-feedback {
+    left: 0;
+  }
+}
+
+.form-horizontal {
+    // Reset spacing and right align labels, but scope to media queries so that
+    // labels on narrow viewports stack the same as a default form example.
+    @media (min-width: @screen-sm-min) {
+        .control-label.text-left {
+            text-align: left;
+        }
+    }
+    
+  // Validation states
+  //
+  // Reposition the icon because it's now within a grid column and columns have
+  // `position: relative;` on them. Also accounts for the grid gutter padding.
+  .has-feedback-left .form-control-feedback {
+    left: floor((@grid-gutter-width / 2));
+  }
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  &:extend(.no-outline all);
+}

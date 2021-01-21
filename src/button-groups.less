@@ -1,0 +1,44 @@
+@btn-group-border-radius: @border-radius-base;
+
+// Space between buttons inside button group 
+// ---------------------------------------------
+.btn-group-spaced {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: 5px;
+  }
+}
+
+.btn-group-spaced > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: @btn-group-border-radius;
+}
+
+.btn-group-spaced > .btn:first-child {
+  margin-left: 0;
+  &:not(:last-child):not(.dropdown-toggle) {
+    .border-right-radius(@btn-group-border-radius);
+  }
+}
+
+// Need .dropdown-toggle since :last-child doesn't apply, given that a .dropdown-menu is used immediately after it
+.btn-group-spaced > .btn:last-child:not(:first-child),
+.btn-group-spaced > .dropdown-toggle:not(:first-child) {
+  .border-left-radius(@btn-group-border-radius);
+}
+
+.btn-group-spaced > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: @btn-group-border-radius;
+}
+
+.btn-group-spaced > .btn-group:first-child:not(:last-child) {
+  > .btn:last-child,
+  > .dropdown-toggle {
+    .border-right-radius(@btn-group-border-radius);
+  }
+}
+
+.btn-group-spaced > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  .border-left-radius(@btn-group-border-radius);
+}

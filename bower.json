@@ -1,0 +1,19 @@
+{
+  "name": "easyb2b-css-styleguide",
+  "version": "0.1.7",
+  "authors": [
+    "Pratik Jaguwala <pratik.jaguwala@easyb2b.com>"
+  ],
+  "description": "",
+  "main": "dist/easyui-bootstrap.min.css",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/easyb2b/easyb2b.css.styleguide",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "documentation"
+  ]
+}

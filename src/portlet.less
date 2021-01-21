@@ -1,0 +1,299 @@
+//
+// Box
+// --------------------------------------------
+//BOXES
+//--------------------------------------------------------
+
+@portlet-border-color: #f4f4f4;
+@portlet-border-radius: @border-radius-base;
+@portlet-footer-bg: #fff;
+@portlet-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+@portlet-padding: 20px;
+
+@portlet-default-border-top-color: #ccc;
+
+//Box variants
+@portlet-primary-bg:            @brand-primary;
+@portlet-primary-border:        @portlet-primary-bg;
+
+@portlet-success-bg:            @brand-success;
+@portlet-success-border:        @portlet-success-bg;
+
+@portlet-info-bg:               @brand-info;
+@portlet-info-border:           @portlet-info-bg;
+
+@portlet-warning-bg:            @brand-warning;
+@portlet-warning-border:        @portlet-warning-bg;
+
+@portlet-danger-bg:             @brand-danger;
+@portlet-danger-border:         @portlet-danger-bg;
+
+
+.portlet {
+    position: relative;
+    border-radius: @portlet-border-radius;
+    background: #ffffff;
+    border: 1px solid @portlet-default-border-top-color;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: @portlet-shadow;
+
+    // Portlet color variations
+    &.portlet-primary {
+        border-top-color: @portlet-primary-border;
+    }
+    &.portlet-info {
+        border-top-color: @portlet-info-border;
+    }
+    &.portlet-danger {
+        border-top-color: @portlet-danger-border;
+    }
+    &.portlet-warning {
+        border-top-color: @portlet-warning-border;
+    }
+    &.portlet-success {
+        border-top-color: @portlet-success-border;
+    }
+    &.portlet-default {
+        border-top-color: @gray;
+    }
+
+    // collapsed mode
+    &.collapsed-box {
+        .portlet-body,
+        .portlet-footer {
+            display: none;
+        }
+    }
+
+    .nav-stacked {
+        > li {
+            border-bottom: 1px solid @portlet-border-color;
+            margin: 0;
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+    }
+
+    // fixed height to 300px
+    &.height-control {
+        .portlet-body {
+            max-height: 300px;
+            overflow: auto;
+        }
+    }
+
+    .border-right {
+        border-right: 1px solid @portlet-border-color;
+    }
+    .border-left {
+        border-left: 1px solid @portlet-border-color;
+    }
+
+    //SOLID BOX
+    //---------
+    //use this class to get a colored header and borders
+
+    &.portlet-solid {
+        border-top: 0;
+        > .portlet-heading {
+            .btn.btn-default {
+                background: transparent;
+            }
+            .btn,
+            a {
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+
+        // Box color variations
+        &.portlet-default {
+            .portlet-variant(@gray, #444);
+        }
+        &.portlet-primary {
+            .portlet-variant(@portlet-primary-bg);
+        }
+        &.portlet-info {
+            .portlet-variant(@portlet-info-bg);
+        }
+        &.portlet-danger {
+            .portlet-variant(@portlet-danger-bg);
+        }
+        &.portlet-warning {
+            .portlet-variant(@portlet-warning-bg);
+        }
+        &.portlet-success {
+            .portlet-variant(@portlet-success-bg);
+        }
+
+        > .portlet-heading > .portlet-tools .btn {
+            border: 0;
+            box-shadow: none;
+        }
+
+        // Fix font color for tiles
+        &[class*='bg'] {
+            > .portlet-heading {
+                color: #fff;
+            }
+        }
+
+    }
+
+    //Portlet group
+    .portlet-group {
+        > .portlet {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.portlet,
+.overlay-wrapper {
+    // Portlet overlay for LOADING STATE effect
+    > .overlay,
+    > .loading-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .overlay {
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: @portlet-border-radius;
+        > .fa {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -15px;
+            margin-top: -15px;
+            color: #000;
+            font-size: 30px;
+        }
+    }
+
+    .overlay.dark {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+//Add clearfix to header, body and footer
+.portlet-heading,
+.portlet-body,
+.portlet-footer {
+    .clearfix();
+}
+
+//Box header
+.portlet-heading {
+    color: #444;
+    display: block;
+    padding: @portlet-padding;
+    position: relative;
+
+    //Add bottom border
+    &.with-border {
+        border-bottom: 1px solid @portlet-border-color;
+        .collapsed-box & {
+            border-bottom: none;
+        }
+    }
+
+    //Icons and box title
+    > .fa,
+    > .glyphicon,
+    > .ion,
+    .portlet-title {
+        display: inline-block;
+        &:extend(.text-title all);
+    }
+    > .fa,
+    > .glyphicon,
+    > .ion {
+        margin-right: 5px;
+    }
+    > .portlet-tools {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        [data-toggle="tooltip"] {
+            position: relative;
+        }
+
+        &.pull-right {
+            .dropdown-menu {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+//Box Tools Buttons
+.btn-portlet-tool {
+    padding: 5px;
+    font-size: 12px;
+    background: transparent;
+    color: darken(@portlet-default-border-top-color, 20%);
+    .open &,
+    &:hover {
+        color: darken(@portlet-default-border-top-color, 40%);
+    }
+    &.btn:active {
+        box-shadow: none;
+    }
+}
+
+//Box Body
+.portlet-body {
+    border-radius: 0 0 @portlet-border-radius @portlet-border-radius;
+    padding: @portlet-padding;
+    .no-header & {
+        .border-top-radius(@portlet-border-radius);
+    }
+    // Tables within the box body
+    > .table {
+        margin-bottom: 0;
+    }
+
+    // Calendar within the box body
+    .fc {
+        margin-top: 5px;
+    }
+
+    .full-width-chart {
+        margin: -19px;
+    }
+    &.no-padding .full-width-chart {
+        margin: -9px;
+    }
+
+    .portlet-pane {
+        border-radius: 0 0 @portlet-border-radius 0;
+    }
+    .portlet-pane-right {
+        border-radius: 0 0 0 @portlet-border-radius;
+    }
+}
+
+//Box footer
+.portlet-footer {
+    border-radius: 0 0 @portlet-border-radius @portlet-border-radius;
+    border-top: 1px solid @portlet-border-color;
+    padding: @portlet-padding;
+    background-color: @portlet-footer-bg;
+}
+
+//A fix for panels body text color when placed within
+// a modal
+.modal {
+    .panel-body {
+        color: #444;
+    }
+}

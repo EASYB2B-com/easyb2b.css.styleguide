@@ -1,0 +1,133 @@
+//
+// Buttons
+// --------------------------------
+.btn {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+  
+  &.outline {
+    background: transparent;
+    border: 1px solid transparent;
+    /*padding: (@padding-base-vertical - 1) (@padding-base-horizontal - 1);*/
+  }
+  
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      &:extend(.no-outline all);
+    }
+  }
+  
+  // Button with icons
+  .btn-icon {
+    margin-right: @padding-base-horizontal;
+    display: inline-block;
+    width: 28px;
+
+    &::before {
+      border-right: 1px solid rgba(255, 255, 255, .15);
+      display: inline-block;
+      position: absolute;
+      padding-right: 13px;
+      line-height: 36px;
+      left: 14px;
+      top: 0;
+    }
+  }
+
+  &.btn-default {
+    .btn-icon {
+      &::before {
+        border-right: 1px solid rgba(0, 0, 0, .15);
+      }
+    }
+  }
+
+  &.btn-sm {
+    .btn-icon::before {
+      line-height: 28px;
+    }
+  }
+
+  &.btn-lg {
+    .btn-icon {
+      &::before {
+        line-height: 51px;
+        width: 35px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  
+}
+
+
+//General hover effects
+.btn[class*='btn-']:hover {
+  transition: @btn-hover-transition;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+.btn-default {
+  // Bordered button
+  &.outline {
+    // TODO style issue
+    .outline(@btn-default-bg;
+    @btn-default-bg);
+  }
+}
+
+.btn-primary {
+  // Bordered button
+  &.outline {
+    .outline(@btn-primary-bg;
+    @btn-primary-bg);
+  }
+}
+
+.btn-success {
+  // Bordered button
+  &.outline {
+    .outline(@btn-success-bg;
+    @btn-success-bg);
+  }
+}
+
+.btn-info {
+  // Bordered button
+  &.outline {
+    .outline(@btn-info-bg;
+    @btn-info-bg);
+  }
+}
+
+.btn-warning {
+  // Bordered button
+  &.outline {
+    .outline(@btn-warning-bg;
+    @btn-warning-bg);
+  }
+}
+
+.btn-danger {
+  // Bordered button
+  &.outline {
+    .outline(@btn-danger-bg;
+    @btn-danger-bg);
+  }
+}
+
+// Custom one
+.btn-black {
+  // Bordered button
+  &.outline {
+    .outline(@btn-black-bg;
+    @btn-black-border);
+  }
+}

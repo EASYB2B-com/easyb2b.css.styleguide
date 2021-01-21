@@ -1,0 +1,40 @@
+// Bordered buttons
+// ----------------------------------
+
+.outline(@color, @border) {
+    border-color: @border;
+    color: @color;
+    
+    &:focus,
+    &.focus {
+        color: #fff;
+        background-color: @color;
+        border-color: @border;
+    }
+    
+    &:hover {
+        color: #fff;
+        background-color: @color;
+        border-color: @border;
+    }
+    
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: #fff;
+        background-color: @color;
+        border-color: @border;
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: @color;
+            border-color: @border;
+        }
+    }
+    
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+}

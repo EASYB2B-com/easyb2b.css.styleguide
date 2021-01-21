@@ -1,0 +1,39 @@
+.card-box {
+    position: relative;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-clip: padding-box;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+.card-box-heading {
+    position: relative;
+    border-bottom: 1px solid transparent;
+    padding: 20px;
+}
+
+.card-box-title {
+    margin: 0;
+    display: inline-block;
+    &:extend(.text-title all);
+}
+
+.card-box-actions {
+    float: right;
+    display: inline-block;
+}
+.card-box-action {
+    display: inline-block;
+    /*padding: 8px 10px;*/
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.card-box-body {
+    padding: 20px;
+}
+.card-box-heading + .card-box-body {
+    padding-top: 0 !important;
+}

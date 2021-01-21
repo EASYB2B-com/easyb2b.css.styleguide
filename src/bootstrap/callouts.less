@@ -1,0 +1,65 @@
+//
+// Callout
+// --------------------------------
+
+// Base styles
+.callout {
+    padding: @callout-padding;
+    margin-bottom: @line-height-computed;
+    border-left: 5px solid transparent;
+    border-radius: (@callout-border-radius * 1.4);
+    
+    .callout-link {
+        color: inherit;
+        border-bottom: 1px solid currentColor;
+        text-decoration: underline;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    
+    h4 {
+        margin-top: 0;
+    }
+    
+    p:last-child {
+        margin-bottom: 0;
+    }
+    
+    code,
+    .highlight {
+        background-color: #fff;
+    }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.callout-success {
+    .callout-variant(@callout-success-bg; @callout-success-border; @callout-success-text);
+}
+
+.callout-info {
+    .callout-variant(@callout-info-bg; @callout-info-border; @callout-info-text);
+}
+
+.callout-danger {
+    .callout-variant(@callout-danger-bg; @callout-danger-border; @callout-danger-text);
+}
+
+.callout-warning {
+    .callout-variant(@callout-warning-bg; @callout-warning-border; @callout-warning-text);
+}
+
+
+.callout {
+    a,
+    .callout-link{
+        color: inherit;
+        border-bottom: 1px solid currentColor;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

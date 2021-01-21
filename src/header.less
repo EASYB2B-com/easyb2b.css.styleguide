@@ -1,0 +1,276 @@
+/*
+* Component: Main Header
+* ----------------------
+*/
+@navbar-color-bg:                  @color-navbar-bg;
+@navbar-color-text:                #fff;
+
+.site-header {
+  
+    //Navbar
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 0;
+        border: none;
+        min-height: @navbar-height;
+        border-radius: 0;
+        .transition(margin-left @transition-speed @transition-fn);
+        
+        .navbar-nav {
+            > li  {
+                > a {
+                    font-family: @headings-font-family;
+                    text-transform: uppercase;
+                    color: @navbar-color-text;
+                    
+                    //Labels in navbar
+                    > .label {
+                        position: absolute;
+                        top: 17px;
+                        right: 7px;
+                        text-align: center;
+                        font-size: 9px;
+                        padding: 2px 3px;
+                        line-height: .9;
+                    }
+                }
+            
+                //Navbar User Menu
+                &.user {
+                    > a {
+                        > .fa, > .glyphicon, > .ion {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+            
+            > li.submenu {
+                > a {
+                    display: inline-block;
+                }
+
+                ul.dropdown-menu {
+                    li {
+                        > a {
+
+                        }
+
+                        &.active {
+                            a {
+                                background-color: @color-black;
+                                border-color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .navbar-inverse {
+        background: @navbar-color-bg;
+    }
+    
+    //Navbar Right Menu
+    .navbar-custom,
+    .navbar-right {
+        @media (min-width: @screen-sm-max) {
+            margin-right: 0;
+        }
+        @media (max-width: @screen-sm-max) {
+            a {
+                color: inherit;
+            }
+        }
+    }
+    
+    .navbar-right {
+        @media (max-width: @screen-xs-max) {
+            float: none;
+            .navbar-collapse & {
+                margin: 7.5px -15px;
+            }
+
+            > li {
+                color: inherit;
+                border: 0;
+            }
+        }
+    }
+    
+    .nav > li > a:hover,
+    .nav > li > a:active,
+    .nav > li > a:focus,
+    .nav .open > a,
+    .nav .open > a:hover,
+    .nav .open > a:focus,
+    .nav > .active > a {
+        background: rgba(0, 0, 0, 0.1);;
+        color: #f6f6f6;
+    }
+    
+    //Logo bar
+    .navbar-brand {
+        display: block;
+        width: inherit;
+        color: #fff;
+        font-size: ceil(@font-size-base * 1.5);
+        font-weight: 600;
+        overflow: hidden;
+        padding: 11px 15px;
+        
+        //Add support to sidebar mini by allowing the user to create
+        //2 logo designs. mini and lg
+        .brand-lg {
+            //should be visibile when sidebar isn't collapsed
+            display: block;
+        }
+        .brand-mini {
+            display: none;
+            -ms-transform: rotate(24deg); /* IE 9 */
+            -webkit-transform: rotate(24deg); /* Safari */
+            transform: rotate(24deg);
+        }
+    }
+
+    
+    @media (max-width: @screen-xs-max) {
+        .logo,
+        .navbar {
+            width: 100%;
+            float: none;
+        }
+
+        .navbar {
+            margin: 0;
+        }
+
+        .navbar-right {
+            .pull-right();
+        }
+    }
+}
+//Control navbar scaffolding on x-small screens
+@media (max-width: @screen-sm-max) {
+    .navbar-custom {
+        .navbar-nav {
+            margin: 0;
+            float: left;
+        }
+        
+        .navbar-nav > li {
+            float: left;
+            > a {
+                padding-top: @navbar-padding-vertical;
+                padding-bottom: @navbar-padding-vertical;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.navbar-toggle {
+    color: #fff;
+    border: 0;
+    margin: 0;
+    padding: @navbar-padding-vertical @navbar-padding-horizontal;
+}
+
+.navbar-collapse.pull-left {
+    @media (max-width: @screen-sm-max) {
+        float: none !important;
+        + .navbar-custom {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 40px;
+        }
+    }
+}
+
+.navbar-nav > .user-menu {
+    > .dropdown-menu {
+        border-radius: 3px;
+        padding: 1px 0 0 0;
+        border-top-width: 0;
+        width: 280px;
+         
+        &,
+        > .user-body,
+        > .user-footer {
+            .border-bottom-radius(3px);
+        }
+        
+        // Header menu
+        > li.user-header {
+            background-color: @navbar-color-bg;
+            height: 175px;
+            padding: 10px;
+            text-align: center;
+            // User image
+            > img {
+                z-index: 5;
+                height: 90px;
+                width: 90px;
+                border: 3px solid;
+                border-color: transparent;
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            > p {
+                z-index: 5;
+                color: #fff;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: 17px;
+                //text-shadow: 2px 2px 3px #333333;
+                margin-top: 10px;
+                > small {
+                    display: block;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        // Menu Body
+        > .user-body {
+            padding: 15px;
+            border-bottom: 1px solid #f4f4f4;
+            border-top: 1px solid #dddddd;
+            
+            &:extend(.clearfix all);
+            
+            a {
+                color: #444 !important;
+                @media (max-width: @screen-sm-max) {
+                    background: #fff !important;
+                    color: #444 !important;
+                }
+            }
+        }
+
+        // Menu Footer
+        > .user-footer {
+            background-color: #f9f9f9;
+            padding: 10px;
+            &:extend(.clearfix all);
+        }
+    }
+    .user-image {
+        float: left;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-top: -2px;
+        @media (max-width: @screen-xs-max) {
+            float: none;
+            margin-right: 0;
+            margin-top: -8px;
+            line-height: 10px;
+        }
+    }
+}
+
+
+
