@@ -1,0 +1,121 @@
+@footer-margin-vertical:        floor((@grid-gutter-width / 2));
+
+html {
+    font-size: 100%;
+}
+
+body.hold-transition {
+    .content-wrapper,
+    .site-footer,
+    .sidebar-box,
+    .site-header > .navbar,
+    .site-header .logo {
+        /* Fix for IE */
+        .transition(none);
+    }
+}
+
+.no-outline {
+    outline: 0;
+}
+
+
+a {
+    &:focus {
+        &:extend(.no-outline all);
+    }
+}
+
+.navbar-top {
+    padding-top: @navbar-height;
+}
+
+// Update containers width
+.container {
+    width: 90%;
+}
+
+/* Layout */
+.wrapper {
+    &:extend(.clearfix all);
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: @body-bg;
+}
+
+/*
+* Content Wrapper - contains the main content
+*/
+.content-wrapper, 
+.site-footer {
+    //Using disposable variable to join statements with a comma
+    @transition-rule: @transition-speed @transition-fn, margin @transition-speed @transition-fn;
+    .transition-transform(@transition-rule);
+    z-index: 999;
+}
+
+.content-wrapper {
+    min-height: 100%;
+    z-index: 800;
+}
+
+/* Content */
+.content {
+    min-height: inherit;
+    
+    &:extend(.clearfix all);
+}
+
+// Content Header
+.content-header {
+    position: relative;
+    padding: (@padding-large-vertical * 2) 0;
+    
+    // Header Text
+    h3 {
+        margin: 0 !important;
+    }
+    
+    .breadcrumb {
+        padding: 5px 0;
+        margin: 0 auto;
+        background: transparent;
+        font-size: ceil(@font-size-base * 0.8);
+
+        > li > a {
+            color: #444;
+            text-decoration: none;
+            display: inline-block;
+            > .fa, > .glyphicon, > .ion {
+                margin-right: 5px;
+            }
+        }
+        > li + li:before {
+            content: '>\00a0';
+        }
+    }
+
+    @media (max-width: @screen-sm-max) {
+        > .breadcrumb {
+            position: relative;
+            margin-top: 5px;
+            top: 0;
+            right: 0;
+            float: none;
+            background: @gray;
+            padding-left: 10px;
+            li:before {
+                color: darken(@gray, 20%);
+            }
+        }
+    }
+}
+
+.site-footer {    
+    background: @color-black;
+    padding: ceil(@padding-base-vertical * 3) @padding-base-horizontal;
+    color: #fff;
+    border-top: 1px solid @gray;
+    margin-top: (@footer-margin-vertical * 2);
+}

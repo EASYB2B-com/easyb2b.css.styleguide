@@ -1,0 +1,192 @@
+// Google fonts
+@import 'https://fonts.googleapis.com/css?family=Roboto:300, 400, 500, 700|Lato:400,500,700';
+
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Text colors
+//
+//##
+
+@color-text: #797979;
+@color-text-light: @gray-light;
+@color-text-lighter: @gray-lighter;
+@color-text-gray: @gray;
+@color-text-light-green: #8CB336;
+
+@color-text-oil-gray: #7A8C99;
+
+
+//== Primary brand colors
+//
+//##
+@color-sky-blue: #2196F3;
+@color-navbar-bg: #32465A;
+@color-aqua-blue: #03A9F4; 
+@color-mint-green: #00C8C3;
+@color-red: #F25F5C;
+@color-orange: #F7A93E;
+@color-black: #363A3B;
+
+@brand-primary:         @color-sky-blue; // #337ab7
+@brand-success:         @color-mint-green;
+@brand-info:            @color-aqua-blue;
+@brand-warning:         @color-orange;
+@brand-danger:          @color-red;
+
+//== Accent colors
+//
+//## 
+
+@color-purlpe: #0644C8;
+@color-gray: #D2D6DE;
+@color-grey-light: darken(#fff, 2.6%);
+
+
+//== Background Colors
+//
+//## 
+
+@bg-color-dark:          #363A3B;
+@bg-color-black:         #485563;
+@bg-color-gray:          #e5e7e8;
+@bg-color-gray-light:    #f5f7f9;
+@bg-color-danger:        #FF3E00;
+@bg-color-success:       #7ED321;
+@bg-color-warning:       #F0CC00;
+@bg-color-info:          @color-aqua-blue;
+
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+@body-bg:               #F4F7F9;
+@text-color:            @color-text;
+@link-color:            @color-sky-blue;
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:  Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-size-large:         14px; // ~18px
+@font-weight-bold:        500;
+
+@headings-font-family:    Roboto, sans-serif;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+/* @padding-base-vertical:     8px;
+@padding-base-horizontal:   16px;
+
+@padding-large-vertical:    15px;
+@padding-large-horizontal:  30px;*/
+
+@border-radius-base:        3px;
+@border-radius-large:       3px;
+@border-radius-small:       3px;
+
+
+//== Buttons
+//
+//##
+
+// Override
+@btn-font-weight:                600;
+@btn-hover-transition:           all 0.5s ease;
+@btn-link-disabled-color:        @gray-light;
+
+@btn-default-color:              #333;
+@btn-default-bg:                 #e7e7e7;
+@btn-default-border:             transparent;
+
+@btn-primary-bg:                 lighten(@color-sky-blue, 5%);
+@btn-primary-border:             transparent;
+
+@btn-success-bg:                 @color-mint-green;
+@btn-success-border:             transparent;
+
+@btn-info-bg:                    @color-aqua-blue;
+@btn-info-border:                transparent;
+
+@btn-warning-bg:                 @color-orange;
+@btn-warning-border:             transparent;
+
+@btn-danger-bg:                  @color-red;
+@btn-danger-border:              transparent;
+
+@btn-black-color:                #fff;
+@btn-black-bg:                   @color-black;
+@btn-black-border:               transparent;
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+@navbar-height:                    48px;
+
+
+//== Transition
+//
+//##
+
+@transition-speed: 0.3s;
+@transition-fn: ease-in-out;
+
+//== Pagination
+//
+//##
+
+@pagination-active-bg:                 @color-sky-blue;
+@pagination-active-border:             @color-sky-blue;
+
+
+//== Labels
+//
+//##
+
+//** Default label background color
+@label-default-bg:            @gray-light;
+//** Primary label background color
+@label-primary-bg:            @color-sky-blue;
+//** Success label background color
+@label-success-bg:            @color-mint-green;
+//** Info label background color
+@label-info-bg:               @color-aqua-blue;
+//** Warning label background color
+@label-warning-bg:            @color-orange;
+//** Danger label background color
+@label-danger-bg:             @color-red;
+
+
+//== Callouts
+//
+//##
+
+@callout-padding:           15px;
+@callout-border-radius:     @border-radius-base;
+@alert-link-font-weight:    bold;
+
+@callout-success-bg:        @state-success-bg;
+@callout-success-text:      @state-success-text;
+@callout-success-border:    @state-success-border;
+
+@callout-info-bg:           @state-info-bg;
+@callout-info-text:         @state-info-text;
+@callout-info-border:       @state-info-border;
+
+@callout-warning-bg:        @state-warning-bg;
+@callout-warning-text:      @state-warning-text;
+@callout-warning-border:    @state-warning-border;
+
+@callout-danger-bg:         @state-danger-bg;
+@callout-danger-text:       @state-danger-text;
+@callout-danger-border:     @state-danger-border;
